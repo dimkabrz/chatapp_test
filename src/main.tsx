@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client'
+import * as ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {Provider} from "react-redux";
 import {persistor, store} from "./app/model/store";

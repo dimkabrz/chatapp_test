@@ -61,23 +61,23 @@ function App() {
         dispatch(updateFilter(null))
     }, [dispatch])
     return (
-        <div className={'main_container'}>
+        <div className='main_container'>
             <h1>
                 Список задач
             </h1>
-            <div className={'add_todo_container'}>
-                <div className={'add_todo_area'}>
+            <div className='add_todo_container'>
+                <div className='add_todo_area'>
                     <input
-                        className={'add_todo_input'}
+                        className='add_todo_input'
                         value={newTodo.title}
                         placeholder={'Введите краткое описание задачи'}
                         onChange={e => setNewTodo({...newTodo, title: e.target.value})}
                     />
-                    {error && <div className={'error_alert'}>{error}</div>}
+                    {error && <div className='error_alert'>{error}</div>}
                 </div>
-                <button className={'add_todo_btn'} onClick={addTodo}>Добавить новую задачу</button>
+                <button className='add_todo_btn' onClick={addTodo}>Добавить новую задачу</button>
             </div>
-            <div className={'select'}>
+            <div className='select'>
                 <select value={stringFilter} onChange={e => setFilter(e.target.value)}>
                     <option value='null'>Все задачи</option>
                     <option value='true'>Выполненные</option>
@@ -88,7 +88,7 @@ function App() {
                     {oldTodos.length > 0 ? (
                         <Droppable droppableId="todos">
                             {(provided) => (
-                                <div className={'todo_list'}  ref={provided.innerRef} {...provided.droppableProps}>
+                                <div className='todo_list'  ref={provided.innerRef} {...provided.droppableProps}>
                                     {oldTodos.map((todo, index) => (
                                         <Draggable key={todo.id} draggableId={todo.id} index={index}>
                                             {(provided) => (
@@ -115,7 +115,7 @@ function App() {
                                                     <div className='todo_title'>
                                                         {editTodo?.id === todo.id ? (
                                                             <input
-                                                                className={'edit_title_input'}
+                                                                className='edit_title_input'
                                                                 value={editTodo.title}
                                                                 onChange={e =>
                                                                     setEditTodo({
@@ -133,7 +133,7 @@ function App() {
                                                         <div className='row_buttons'>
                                                             {editTodo?.id === todo.id ? (
                                                                 <button
-                                                                    className={'todo_btn'}
+                                                                    className='todo_btn'
                                                                     onClick={() => {
                                                                         updateTodo({
                                                                             ...todo,
@@ -145,7 +145,7 @@ function App() {
                                                                     <img src={'/check.svg'} alt=''/>
                                                                 </button>
                                                             ) : (
-                                                                <button className={'todo_btn'} onClick={() => setEditTodo(todo)}>
+                                                                <button className='todo_btn' onClick={() => setEditTodo(todo)}>
                                                                     <img src={'/pencil.svg'} alt=''/>
                                                                 </button>
                                                             )}
@@ -166,7 +166,7 @@ function App() {
                         </Droppable>
                     ) : (
                         <div>
-                            <div className={'empty_list_notification'}>Здесь будут выбранные задачи</div>
+                            <div className='empty_list_notification'>Здесь будут выбранные задачи</div>
                         </div>
                     )}
             </DragDropContext>

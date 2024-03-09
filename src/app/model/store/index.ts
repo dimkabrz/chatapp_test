@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import TodoSlice from "./todoSlice.ts";
 import storage from 'redux-persist/lib/storage';
 import {
@@ -15,7 +15,6 @@ import {
     TypedUseSelectorHook,
     useDispatch as useAppDispatch,
     useSelector as useAppSelector,
-    // useStore as useAppStore,
 } from 'react-redux';
 
 const persistConfig = {
@@ -25,7 +24,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, TodoSlice);
 
-export const store =  configureStore({
+export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -42,4 +41,3 @@ export type AppDispatch = typeof store.dispatch;
 
 export const useDispatch: () => AppDispatch = useAppDispatch;
 export const useSelector: TypedUseSelectorHook<RootState> = useAppSelector;
-// export const useStore: () => { store: typeof store, persistor: typeof persistor } = useAppStore;

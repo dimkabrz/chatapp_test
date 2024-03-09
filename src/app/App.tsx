@@ -1,14 +1,14 @@
 import './App.css';
-import {useDispatch, useSelector} from "./app/model/store";
+import {useDispatch, useSelector} from "./model/store";
 import {
     addNewTodo,
     deleteOneTodo,
     updateFilter,
     updateOldTodo, updateTodoList
-} from "./app/model/store/todoSlice.ts";
+} from "./model/store/todoSlice.ts";
 import {useEffect, useState} from "react";
-import {Todo} from "./app/model/store/types.ts";
-import {useFiltredList} from "./hooks";
+import {Todo} from "./model/store/types.ts";
+import {useFiltredList} from "../hooks";
 import {nanoid} from "nanoid";
 import {DragDropContext, Droppable, Draggable, DropResult} from 'react-beautiful-dnd';
 

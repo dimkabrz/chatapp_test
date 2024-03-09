@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import App from '../src/app/App.tsx'
 import {Provider} from "react-redux";
 import {persistor, store} from "./app/model/store";
 import {PersistGate} from 'redux-persist/integration/react'

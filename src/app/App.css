@@ -16,7 +16,7 @@ h1{
     color: #5D5D5DFF;
 }
 .main_container {
-    width: 40%;
+    width: 50%;
     max-width: 1280px;
     padding: 100px 0 0 0;
     display: flex;
@@ -39,9 +39,9 @@ h1{
     border-bottom: 1px solid #eee;
     align-items: center;
     background-color: white;
-    width: 100%;
     justify-content: space-between;
     height: 35px;
+    gap: 10px;
 }
 
 .todo_checked {
@@ -56,17 +56,13 @@ h1{
 }
 
 .add_todo_area {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     position: relative;
+    flex: 1;
 }
 
 .add_todo_input {
-    resize: none;
-    min-width: 300px;
-    width: 80%;
     outline: 1px solid lightgrey;
     border: none;
     font-size: 16px;
@@ -80,22 +76,22 @@ h1{
 }
 
 .todo_title {
-    width: 80%;
-    max-width: 80%;
+    flex: 1;
     text-align: start;
+    display: flex;
 }
 
 .edit_title_input {
-    width: 100%;
-    min-width: 300px;
-    resize: none;
     outline: 1px solid lightgrey;
     border: none;
     font-size: 16px;
-    padding: 8px 8px 8px 0;
+    padding: 8px;
     border-radius: 10px;
+    flex: 1;
 }
-
+.select{
+    align-self: start;
+}
 select {
     padding: 10px;
     font-size: 16px;
@@ -103,7 +99,6 @@ select {
     border-radius: 10px;
     background-color: #f9f9f9;
     color: #333;
-    width: 200px;
     outline: none;
 }
 
@@ -158,8 +153,9 @@ input[type='checkbox'] {
 .error_alert {
     color: red;
     position: absolute;
-    top: 60px;
-
+    top: 50px;
+    white-space: nowrap;
+    font-size: 12px;
 }
 
 .add_todo_container {
@@ -170,9 +166,40 @@ input[type='checkbox'] {
     align-items: center;
     padding: 20px;
     justify-content: space-between;
-    height: 100px;
+    gap: 30px;
 }
 
-.select {
-    align-self: start;
+
+
+@media screen and (max-width: 1000px){
+    .add_todo_container{
+        flex-direction: column;
+        padding: 30px;
+        align-items: stretch;
+    }
+    .error_alert{
+        white-space: normal;
+    }
+    .main_container{
+        font-size: 14px;
+        width: 90%;
+    }
+    input[type='checkbox'] {
+        transform: scale(1);
+        margin: 0;
+    }
+    .todo_card{
+        gap: 5px;
+    }
+    .add_todo_input {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .todo_list{
+        padding: 5px;
+    }
+    .edit_title_input{
+        padding: 5px;
+        font-size: 12px;
+    }
 }

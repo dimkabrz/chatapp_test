@@ -68,7 +68,7 @@ function App() {
             <div className='add_todo_container'>
                 <div className='add_todo_area'>
                     <input
-                        className='add_todo_input'
+                        className={`${error && 'error_input'} add_todo_input`}
                         value={newTodo.title}
                         placeholder={'Введите краткое описание задачи'}
                         onChange={e => setNewTodo({...newTodo, title: e.target.value})}

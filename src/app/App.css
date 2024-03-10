@@ -158,6 +158,10 @@ input[type='checkbox'] {
     font-size: 12px;
 }
 
+.error_input, .error_input:focus-visible{
+    outline-color: red;
+}
+
 .add_todo_container {
     background: white;
     border-radius: 15px;
